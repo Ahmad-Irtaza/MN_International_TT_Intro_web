@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MN International Tours & Travels</title>
+<style>
+   /* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: white;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+}
+
+/* Services */
+.services {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+  color: white;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.25);
+}
+
+/* Packages */
+.packages {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.package-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.25);
+}
+
+.package-price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contact */
+.contact {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2d3436, #000000);
+  color: white;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.contact-item {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.contact-item:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.25);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: linear-gradient(45deg, #00b894, #00cec9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .package-grid,
+  .services-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .package-card,
+  .service-card,
+  .contact-item {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .package-card h3,
+  .service-card h3,
+  .contact-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .package-price {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .package-card,
+  .service-card,
+  .contact-item {
+    padding: 15px;
+    font-size: 0.85rem;
+  }
+
+  .package-card h3,
+  .service-card h3,
+  .contact-item h3 {
+    font-size: 1rem;
+  }
+
+  .package-price {
+    font-size: 1.3rem;
+  }
+}
+.gallery {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  background: #f8f9fa;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.slide-content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  font-size: 1rem;
+}
+
+.nav-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #667eea;
+  transform: scale(1.2);
+}
+
+
+.flying-plane {
+  position: fixed;
+  top: 10%;
+  right: -100px;
+  width: 60px;
+  height: 60px;
+  background: url('plane-icon.png') no-repeat center center;
+  background-size: contain;
+  animation: fly-across 20s linear infinite;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-110vw) rotate(-10deg);
+  }
+}
+
+
+.flying-plane {
+  position: fixed;
+  top: 10%;
+  right: -100px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #74b9ff, #0984e3);
+  clip-path: polygon(0% 50%, 20% 0%, 100% 50%, 20% 100%);
+  animation: fly-across 20s linear infinite;
+  z-index: 999;
+  opacity: 0.8;
+}
+
+svg {
+  width: 80px;
+  height: auto;
+  position: fixed;
+  animation: fly 20s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        right: -100px;
+        transform: scale(0.8) rotate(0deg);
+    }
+    100% {
+        right: 110%;
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="flying-plane"></div>
+
+    <!-- Floating Plane Animation -->
+    <div class="floating-plane"></div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-circle">
+              <img src="logo.jpeg" alt="MN Logo" class="logo-img">
+            </div>
+          </div>
+          
+        <div class="hero-content">
+            <h1 class="hero-title">MN International Tours & Travels</h1>
+            <p class="hero-subtitle">We Make Travel Easy, You Make Memories</p>
+            <a href="#contact" class="cta-button">Book Your Journey</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✈️</div>
+                    <h3>Flight Bookings</h3>
+                    <p>Cheapest airline tickets with best rates from the market. We offer tickets for all major airlines worldwide.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Hotel Reservations</h3>
+                    <p>4-star hotel accommodations with complete transport services. Comfortable stays at the best locations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Visa Services</h3>
+                    <p>Complete visa processing for Malaysia, Cambodia, Azerbaijan, Qatar, Dubai, and many more countries.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>Tour Packages</h3>
+                    <p>Customized tour packages for Umrah, Europe, America, Canada, and all major destinations worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Slideshow Section -->
+    <section class="gallery animate-on-scroll">
+        <div class="container">
+          <h2 class="section-title" style="color: #2d3436;">Explore Destinations</h2>
+          <div class="slideshow-container">
+            <div class="slide active">
+              <img src="germany.jpeg" alt="Germany">
+              <div class="slide-content">
+                <h3>Germany</h3>
+                <p>Explore rich history and stunning castles.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="uk.jpg" alt="United Kingdom">
+              <div class="slide-content">
+                <h3>United Kingdom</h3>
+                <p>Visit London, Scotland and the scenic countryside.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="makkah.jpeg" alt="Makkah">
+              <div class="slide-content">
+                <h3>Makkah</h3>
+                <p>Spiritual journey to the heart of Islam.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="sudia_arab.jpeg" alt="Saudi Arabia">
+              <div class="slide-content">
+                <h3>Saudi Arabia</h3>
+                <p>Discover culture and the Arabian desert.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="malysia.jpeg" alt="Malaysia">
+              <div class="slide-content">
+                <h3>Malaysia</h3>
+                <p>Diverse culture and tropical landscapes.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="sigapor.jpg" alt="Singapore">
+              <div class="slide-content">
+                <h3>Singapore</h3>
+                <p>Modern architecture and vibrant streets.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="turkey.jpg" alt="Turkey">
+              <div class="slide-content">
+                <h3>Turkey</h3>
+                <p>East meets West in Istanbul and beyond.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="thailand.jpg" alt="Thailand">
+              <div class="slide-content">
+                <h3>Thailand</h3>
+                <p>Temples, beaches, and vibrant markets.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="sudia_arab.jpeg" alt="UAE">
+              <div class="slide-content">
+                <h3>United Arab Emirates</h3>
+                <p>Luxury and innovation in the Middle East.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="italy.jpg" alt="Italy">
+              <div class="slide-content">
+                <h3>Italy</h3>
+                <p>Historic cities and world-famous cuisine.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="farance.jpg" alt="France">
+              <div class="slide-content">
+                <h3>France</h3>
+                <p>Romantic streets and cultural landmarks.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="canda.jpg" alt="Canada">
+              <div class="slide-content">
+                <h3>Canada</h3>
+                <p>Majestic mountains and friendly cities.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="uae.jpg" alt="USA">
+              <div class="slide-content">
+                <h3>USA</h3>
+                <p>Explore iconic cities and natural parks.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="thai.jpg" alt="Spain">
+              <div class="slide-content">
+                <h3>Spain</h3>
+                <p>Vibrant culture and Mediterranean beaches.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="azarbijan.jpg" alt="Azerbaijan">
+              <div class="slide-content">
+                <h3>Azerbaijan</h3>
+                <p>Modern cities and ancient heritage.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="maldev.jpg" alt="Maldives">
+              <div class="slide-content">
+                <h3>Maldives</h3>
+                <p>Crystal clear waters and luxury resorts.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="egypt.jpg" alt="Egypt">
+              <div class="slide-content">
+                <h3>Egypt</h3>
+                <p>Ancient pyramids and the Nile River.</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="oman.jpg" alt="Oman">
+              <div class="slide-content">
+                <h3>Oman</h3>
+                <p>Traditional culture and stunning landscapes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="nav-dots">
+            <!-- Generate dots dynamically or add manually if needed -->
+          </div>
+        </div>
+      </section>
+      
+            <div class="nav-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+                <span class="dot" onclick="currentSlide(14)"></span>
+                <span class="dot" onclick="currentSlide(15)"></span>
+                <span class="dot" onclick="currentSlide(16)"></span>
+                <span class="dot" onclick="currentSlide(17)"></span>
+                <span class="dot" onclick="currentSlide(18)"></span>
+                <span class="dot" onclick="currentSlide(19)"></span>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Featured Packages</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <div class="package-price">250,000 PKR</div>
+                    <h3>Umrah Group Package</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 21 Days (12 July to 01 August)</li>
+                        <li>✓ Makkah Hotel 600M</li>
+                        <li>✓ Madinah Hotel 500M</li>
+                        <li>✓ Complete Transport</li>
+                        <li>✓ Ziyarat of Makkah & Madinah</li>
+                    </ul>
+                </div>
+                <div class="package-card">
+                    <h3>Dubai + Baku Package</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 2 Nights in Dubai</li>
+                        <li>✓ 4 Nights in Baku</li>
+                        <li>✓ Return Air Ticket</li>
+                        <li>✓ Dubai City Tour</li>
+                        <li>✓ Marina Dhow Cruise</li>
+                        <li>✓ Baku City Tour</li>
+                    </ul>
+                </div>
+                <div class="package-card">
+                    <h3>Qatar 2 Year Freelance Visa</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ Business Hours: 10 AM - 6 PM</li>
+                        <li>✓ Friday: Closed</li>
+                        <li>✓ Quick Processing</li>
+                        <li>✓ Complete Documentation</li>
+                        <li>✓ Professional Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section class="contact animate-on-scroll" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <h3>Phone Numbers</h3>
+          <p>+92 335 7770866<br>+92 306 7443422<br>+971 58 6856772</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p>Quick response on WhatsApp<br>+92 335 7770866<br>Available 24/7</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <h3>Email</h3>
+          <p>mnitours.travels@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <h3>Office Location</h3>
+          <p>Office No. 21 Basement<br>City Mall, GT Road<br>Lalamusa, Pakistan</p>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕒</div>
+          <h3>Business Hours</h3>
+          <p>Mon–Thu: 10:00 AM - 6:00 PM<br>Fri: Closed<br>Sat–Sun: 10:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fuselage -->
+    <path d="M100 200 Q300 150 600 170 Q680 200 680 220 Q620 220 600 230 Q300 240 100 200 Z" fill="#1e4ca6" stroke="#000" stroke-width="1" />
+    
+    <!-- Cockpit Window -->
+    <rect x="650" y="180" width="30" height="20" rx="5" ry="5" fill="#555" />
+    
+    <!-- Windows -->
+    <g fill="#cbd5e1">
+      <circle cx="200" cy="185" r="8" />
+      <circle cx="230" cy="185" r="8" />
+      <circle cx="260" cy="185" r="8" />
+      <circle cx="290" cy="185" r="8" />
+      <circle cx="320" cy="185" r="8" />
+      <circle cx="350" cy="185" r="8" />
+      <circle cx="380" cy="185" r="8" />
+      <circle cx="410" cy="185" r="8" />
+      <circle cx="440" cy="185" r="8" />
+    </g>
+  
+    <!-- Tail -->
+    <polygon points="100,200 90,120 120,120 180,180" fill="#1153b0" />
+  
+    <!-- Wings -->
+    <polygon points="220,210 450,230 450,250 220,240" fill="#777" />
+    
+    <!-- Horizontal Stabilizer -->
+    <polygon points="90,210 140,215 140,225 90,220" fill="#999" />
+  
+    <!-- Engine -->
+    <g>
+      <ellipse cx="460" cy="260" rx="30" ry="20" fill="#666" />
+      <circle cx="460" cy="260" r="8" fill="#333" />
+    </g>
+  </svg>
+  
+  
+
+    <script>
+        // Slideshow functionality
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName('slide');
+            let dots = document.getElementsByClassName('dot');
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // Auto slideshow
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 5000);
+
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add floating elements animation
+function createFloatingPlane() {
+    const plane = document.createElement('div');
+    const topPosition = Math.random() * 80 + 10; // between 10% and 90%
+
+    plane.style.cssText = `
+        position: fixed;
+        top: ${topPosition}%;
+        right: -100px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #74b9ff, #0984e3);
+        clip-path: polygon(0% 50%, 20% 0%, 100% 50%, 20% 100%);
+        animation: fly ${Math.random() * 15 + 10}s linear;
+        z-index: 999;
+        opacity: 0.8;
+    `;
+
+    document.body.appendChild(plane);
+
+    setTimeout(() => {
+        plane.remove();
+    }, 30000); // max 30 seconds on screen
+}
+
+setInterval(createFloatingPlane, 2000);
+
+</script>
+
+
+        
+    
+</body>
+</html>
