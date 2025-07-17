@@ -2,9 +2,7 @@
 A visually rich, interactive, and responsive travel agency website built using pure HTML, CSS, and JavaScript. This project showcases the services, packages, gallery, and contact information of MN International Tours & Travels, complete with animated flying airplanes and a beautiful destination slideshow.
 
 ✨ Features
-🛩️ Animated Airplanes – Dynamic floating airplane graphics for visual delight.
-
-
+🛩️ Animated Airplanes – Dynamic floating airplane graphics for visual delight
 
 
 
