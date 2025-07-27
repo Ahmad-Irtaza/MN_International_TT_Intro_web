@@ -25,7 +25,7 @@ HTML5
 
 CSS3 (Grid, Flexbox, Animations, Media Queries)
 
-Vanilla JavaScript (DOM manipulation, slideshow, scroll effects)manjsksbh
+Vanilla JavaScript (DOM manipulation, slideshow, scroll effects)
 
 
 
